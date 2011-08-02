@@ -1,3 +1,4 @@
+# Application patches
 
 msg "Adding password_confirmation to filter_parameters ... "
 gsub_file 'config/application.rb', /:password\]/, ':password, :password_confirmation]'
