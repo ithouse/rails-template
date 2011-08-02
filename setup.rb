@@ -12,9 +12,8 @@ require "rails"
 require "colored"
 require "bundler"
 
-@root_path = File.expand_path(File.dirname(__FILE__))
 @recipes_path = File.join(File.dirname(__FILE__),"recipes")
-@resources_path = File.join(@root_path,"resources")
+@resources_path = File.join(File.dirname(__FILE__),"resources")
 
 def msg text
   puts "\n    => #{text}".yellow
