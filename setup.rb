@@ -13,7 +13,6 @@ require "colored"
 require "bundler"
 
 @root_path = File.expand_path(File.dirname(__FILE__))
-@recipes_path = File.join(@root_path,"recipes")
 @resources_path = File.join(@root_path,"resources")
 
 def msg text
@@ -25,7 +24,7 @@ puts " Setup Rails 3 with Lolita template...".green.bold
 puts "========================================================\n\n"
 
 %w{cleanup app rvm gems git haml jquery compass rspec cucumber lolita database}.each do |name|
-  apply "#{@recipes_path}/#{name}.rb"
+  apply "#{name}.rb"
 end
 
 puts "\n========================================================"
