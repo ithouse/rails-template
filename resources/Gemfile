@@ -1,0 +1,10 @@
+source 'http://rubygems.org'
+
+gem 'rails', '3.0.9'
+gem 'rake', '=0.8.7'
+if RUBY_PLATFORM=='i386-mingw32'
+  gem 'mysql2', '0.2.6', :platforms=>:mingw
+else
+  gem 'mysql2', '~>0.2.7'
+end
+

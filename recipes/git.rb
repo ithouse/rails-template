@@ -1,0 +1,1 @@
+get "#{@resources_path}/.gitignore", ".gitignore", :force => true
