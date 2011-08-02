@@ -10,18 +10,21 @@ gem 'haml-rails'
 gem 'rspec', '~> 2.6.0',            :group => :test
 gem 'rspec-rails', '~> 2.6.1',      :group => :test
 gem 'database_cleaner', '~> 0.6.7', :group => :test
+gem 'fabrication', '~> 1.0.1',      :group => :test
 
 # cucumber
-gem 'cucumber',         :group => :test
-gem 'cucumber-rails',   :group => :test
-gem 'capybara',         :group => :test
-gem 'launchy',          :group => :test
+gem 'cucumber', '~> 1.0.2',         :group => :test
+gem 'cucumber-rails', '~> 1.0.2',   :group => :test
+gem 'capybara', '~> 1.0',           :group => :test
+gem 'launchy', '~> 2.0.5',           :group => :test
 
 # lolita
-gem "lolita", "~>3.1.12"
+#gem "devise", "~> 1.4.2"
+gem "lolita", "~> 3.1.12"
 
 # compass
 gem "compass", "~> 0.11.5"
 
 
-run "bundle install"
+run "#{@rvm} gem install bundler --no-ri --no-rdoc"
+run "#{@rvm} exec bundle install"

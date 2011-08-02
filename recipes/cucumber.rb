@@ -1,3 +1,3 @@
 # cucumber
 msg "Install cucumber..."
-generate "cucumber:install --capybara --rspec"
+run "#{@rvm} exec rails g cucumber:install --capybara --rspec"

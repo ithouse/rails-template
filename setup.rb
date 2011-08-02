@@ -1,16 +1,13 @@
 # Rails 3 template with Lolita
 
-%w{bundler colored}.each do |name|
-  unless Gem.available?(name)
-    run "gem install #{name} --no-rdoc --no-ri"
-    Gem.refresh
-    Gem.activate(name)
-  end
+unless Gem.available?("colored")
+  run "gem install colored --no-rdoc --no-ri"
+  Gem.refresh
+  Gem.activate(name)
 end
 
 require "rails"
 require "colored"
-require "bundler"
 
 @recipes_path = File.join(File.dirname(__FILE__),"recipes")
 @resources_path = File.join(File.dirname(__FILE__),"resources")

@@ -11,7 +11,7 @@ gsub_file 'config/database.yml', /project_development/, "#{@app_name}_developmen
 gsub_file 'config/database.yml', /project_test/, "#{@app_name}_test"
 gsub_file 'config/database.yml', /project_production/, "#{@app_name}_production"
 
-if yes?("\nCreate database? (yes/no)")
-  run "bundle exec rake db:create"
-  run "bundle exec rake db:test:clone"
+if yes?("\nCreate database? (no/yes)")
+  run "#{@rvm} exec rake db:create"
+  run "#{@rvm} exec rake db:test:clone"
 end
