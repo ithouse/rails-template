@@ -20,11 +20,13 @@ gem 'launchy', '~> 2.0.5',           :group => :test
 
 # lolita
 #gem "devise", "~> 1.4.2"
-gem "lolita", "~> 3.1.12"
+gem "lolita", "~> 3.1.13"
 
 # compass
 gem "compass", "~> 0.11.5"
 
+# simple form
+gem "simple_form", "~> 1.4.2"
 
 run "#{@rvm} gem install bundler --no-ri --no-rdoc"
 run "#{@rvm} exec bundle install"

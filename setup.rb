@@ -20,7 +20,7 @@ puts "\n========================================================"
 puts " Setup Rails 3 with Lolita template...".green.bold
 puts "========================================================\n\n"
 
-%w{cleanup app rvm gems git haml jquery compass rspec cucumber lolita database}.each do |name|
+%w{cleanup app rvm gems git haml jquery compass simple_form rspec cucumber lolita database}.each do |name|
   apply "#{@recipes_path}/#{name}.rb"
 end
 
