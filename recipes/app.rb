@@ -9,15 +9,6 @@ gsub_file 'config/application.rb', /# config.time_zone = '.+'/, "config.time_zon
 msg "Setting default locale ... "
 gsub_file 'config/application.rb', /# config.i18n.default_locale = .+/, "config.i18n.default_locale = :lv"
 
-msg "Turning off timestamped_migrations ..."
-inject_into_file 'config/application.rb', :before => "  end\nend" do
-  <<-RUBY
-
-    # Turn off timestamped migrations
-    config.active_record.timestamped_migrations = false
-  RUBY
-end
-
 msg "Setting up log file rotation ..."
 inject_into_file 'config/application.rb', :before => "  end\nend" do
   <<-RUBY

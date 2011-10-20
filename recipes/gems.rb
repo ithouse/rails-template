@@ -2,31 +2,30 @@ msg "Install gems"
 
 get "#{@resources_path}/Gemfile", "Gemfile", :force => true
 
-# Haml
 gem 'haml'
 gem 'haml-rails'
+gem 'simple_form', '~> 1.5.2'
 
-# rspec
-gem 'rspec', '~> 2.6.0',            :group => :test
-gem 'rspec-rails', '~> 2.6.1',      :group => :test
-gem 'database_cleaner', '~> 0.6.7', :group => :test
-gem 'fabrication', '~> 1.0.1',      :group => :test
+gem 'devise', '~> 1.4.9'
+gem 'cancan', '~> 1.6.7'
+gem 'lolita', '~> 3.2.rc.5'
+gem 'exception_notification', '~> 2.5.2'
+gem 'jquery-rails', '~> 1.0.16'
+gem 'therubyracer'
 
-# cucumber
-gem 'cucumber', '~> 1.0.2',         :group => :test
-gem 'cucumber-rails', '~> 1.0.2',   :group => :test
-gem 'capybara', '~> 1.0',           :group => :test
-gem 'launchy', '~> 2.0.5',           :group => :test
 
-# lolita
-#gem "devise", "~> 1.4.2"
-gem "lolita", "~> 3.1.13"
+gem 'sass-rails', '~> 3.1.0', :group => :assets
+gem 'coffee-rails', '~> 3.1.0', :group => :assets
+gem 'uglifier', '~> 1.0.4', :group => :assets
 
-# compass
-gem "compass", "~> 0.11.5"
 
-# simple form
-gem "simple_form", "~> 1.4.2"
+gem 'rspec-rails', '~> 2.6.1', :group => [:development, :test]
+gem 'database_cleaner', '~> 0.6.7', :group => [:development, :test]
+gem 'fabrication', '~> 1.1.0', :group => [:development, :test]
+gem 'capybara', '~> 1.1.1', :group => [:development, :test]
+gem 'capybara-webkit', '~> 0.7.2', :group => [:development, :test]
+gem 'ruby-debug19', :group => [:development, :test]
+
 
 run "#{@rvm} gem install bundler --no-ri --no-rdoc"
 run "#{@rvm} exec bundle install"

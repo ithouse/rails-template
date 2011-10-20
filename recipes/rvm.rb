@@ -2,10 +2,7 @@
 
 msg "RVM setup..."
 
-# Need to strip colors in case rvm_pretty_print_flag is enabled in user's .rvmrc
-rvm_list = `rvm list`.gsub(Regexp.new("\e\\[.?.?.?m"), '')
-
-current_ruby = rvm_list.match(/=> ([^ ]+)/)[1]
+current_ruby = `rvm-prompt`.strip
 desired_ruby = ask("\nWhich RVM Ruby would you like to use? [#{current_ruby}]")
 desired_ruby = current_ruby if desired_ruby.blank?
 
